@@ -1,4 +1,5 @@
-_id,author,book,quote
-0,Kurt Vonnegut,Slaughterhouse-Five,So it goes.
-1,Hermann Hesse,Siddhartha,I can think. I can wait. I can fast.
-2,Ursula K. Le Guin,The Dispossessed,"To make a thief, make an owner; to create crime, create laws."
+author,book,quote
+Kurt Vonnegut,Slaughterhouse-Five,So it goes.
+Hermann Hesse,Siddhartha,I can think. I can wait. I can fast.
+Ursula K. Le Guin,The Dispossessed,"To make a thief, make an owner; to create crime, create laws."
+Leo Tolstoy,War and Peace,The strongest of all warriors are these two: Time and Patience.
