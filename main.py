@@ -8,7 +8,8 @@ app = FastAPI()
 # You can add additional URLs to this list, for example, the frontend's production domain, or other frontends.
 allowed_origins = [
     "http://localhost:3000",
-    "https://benwright.blog"
+    "https://benwright.blog",
+    "https://bens-blog-react-tfeo4yp7iq-uc.a.run.app"
 ]
 
 
