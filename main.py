@@ -8,7 +8,6 @@ app = FastAPI()
 # You can add additional URLs to this list, for example, the frontend's production domain, or other frontends.
 allowed_origins = [
     "http://localhost:3000",
-    "https://benwright.blog",
     "https://bens-blog-react-tfeo4yp7iq-uc.a.run.app"
 ]
 
@@ -29,14 +28,24 @@ app.add_middleware(
 def row_to_json(row):
     return {"_id":row[0],"author":row[1],"book":row[2],"quote":row[3]}
 
-def get_random_row():
+def rows_to_json(rows):
+    jsons = []
+
+    for row in rows:
+        jsons.append(row_to_json(row))
+
+    return jsons
+
+def get_random_rows(number = 1):
+
+    limit = min(number,5)
 
     conn = sqlite3.connect(DB)
     curs = conn.cursor()
-    row = curs.execute('SELECT _id, author, book, quote FROM Quotes ORDER BY RANDOM() LIMIT 1').fetchone()
+    rows = curs.execute(f'SELECT _id, author, book, quote FROM Quotes ORDER BY RANDOM() LIMIT {limit}').fetchall()
     conn.close()
 
-    return row
+    return rows
 
 @app.get("/")
 def read_root():
@@ -44,4 +53,8 @@ def read_root():
 
 @app.get("/random")
 def random_quote():
-    return row_to_json(get_random_row())
+    return row_to_json(get_random_rows())
+
+@app.get("/random/{number}")
+def random_quotes(number:int):
+    return rows_to_json(get_random_rows(number))
