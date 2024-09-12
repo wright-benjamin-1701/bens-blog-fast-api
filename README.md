@@ -1,6 +1,15 @@
-An API with a static database to provide literary quotes. To update the quotes DB, edit the data in quotes.csv, then re-run the entire quotes_admin.ipynb file.
+An API with a static database to provide literary quotes. 
 
-Sources: 0. https://www.datacamp.com/tutorial/introduction-fastapi-tutorial,https://fastapi.tiangolo.com/tutorial/
+To update the quotes DB, edit the data in quotes.csv, then re-run the entire quotes_admin.ipynb file. 
+This creates the static sqlite database for deployment.
+
+To test:
+0. Install uvicorn
+1. Run "uvicorn main:app --reload" in the project directory
+
+Sources: 
+
+0. https://www.datacamp.com/tutorial/introduction-fastapi-tutorial,https://fastapi.tiangolo.com/tutorial/
 
 1. Allowing public GET requests https://sentry.io/answers/fastapi-error-no-access-control-allow-origin-header-is-present-on-the-requested-resource/
 
