@@ -53,7 +53,7 @@ def read_root():
 
 @app.get("/random")
 def random_quote():
-    return row_to_json(get_random_rows())
+    return row_to_json(get_random_rows()[0])
 
 @app.get("/random/{number}")
 def random_quotes(number:int):
